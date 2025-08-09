@@ -1,0 +1,26 @@
+services:
+  zassist_api:
+    build:
+      context: .
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    volumes:
+      - .:/app
+    depends_on:
+      - zassist_db
+    command: python manage.py runserver 0.0.0.0:8000
+
+  zassist_db:
+    image: postgres:16
+    container_name: zassist_db
+    env_file:
+      - .env
+    ports:
+      - "5433:5432"
+    volumes:
+      - zassist_data:/var/lib/postgresql/data
+
+volumes:
+  zassist_data:
