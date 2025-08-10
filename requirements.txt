@@ -16,4 +16,6 @@ djoser
 pytest
 django-filter
 Pillow
+drf-spectacular
+
 

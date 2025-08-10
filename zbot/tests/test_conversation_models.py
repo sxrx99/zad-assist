@@ -25,7 +25,7 @@ class ModelTests(TestCase):
             self.assertIs(conversation.user, user)
             self.assertEqual(conversation.name, "test conversation01")
 
-        def test_create_text_message(self):
+    def test_create_text_message(self):
             """Test creating a new text message."""
             user = get_user_model().objects.create_user(
                 email="ismail@gmail.com",
@@ -43,7 +43,7 @@ class ModelTests(TestCase):
             self.assertIs(text_message.conversation, conversation)
             self.assertEqual(text_message.text, "test text message")
             
-        def test_create_image_message(self):
+    def test_create_image_message(self):
             """Test creating a new image message."""
             user = get_user_model().objects.create_user(
                 email="ismail@gmail.com",
